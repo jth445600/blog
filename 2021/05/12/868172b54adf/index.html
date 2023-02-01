@@ -1,0 +1,409 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>goindex | 云白科技</title><meta name="author" content="Laurence"><meta name="copyright" content="Laurence"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="GoIndex-theme-acrou结合 Cloudflare Workers 和 Google Drive 的力量，你可以在Cloudflare Workers的浏览器上建立你的文件索引。 go2index&#x2F;index.js 是Workers脚本的内容。 这个主题的goindex目前是基于 yanzai&#x2F;goindex README | 中文文档 预览Acrou: http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="goindex">
+<meta property="og:url" content="https://blog.yunbaitech.top/2021/05/12/868172b54adf/index.html">
+<meta property="og:site_name" content="云白科技">
+<meta property="og:description" content="GoIndex-theme-acrou结合 Cloudflare Workers 和 Google Drive 的力量，你可以在Cloudflare Workers的浏览器上建立你的文件索引。 go2index&#x2F;index.js 是Workers脚本的内容。 这个主题的goindex目前是基于 yanzai&#x2F;goindex README | 中文文档 预览Acrou: http">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/07/26/vSKYXd.jpg">
+<meta property="article:published_time" content="2021-05-12T21:22:28.000Z">
+<meta property="article:modified_time" content="2023-02-01T14:30:39.219Z">
+<meta property="article:author" content="Laurence">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/07/26/vSKYXd.jpg"><link rel="shortcut icon" href="https://www.helloimg.com/images/2022/07/20/ZvvNEX.jpg"><link rel="canonical" href="https://blog.yunbaitech.top/2021/05/12/868172b54adf/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-3841753214614437',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'goindex',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-01 14:30:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.helloimg.com/images/2022/07/20/ZvvNEX.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s1.ax1x.com/2022/07/26/vSKYXd.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">云白科技</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">goindex</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-12T21:22:28.000Z" title="发表于 2021-05-12 21:22:28">2021-05-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-01T14:30:39.219Z" title="更新于 2023-02-01 14:30:39">2023-02-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="goindex"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="GoIndex-theme-acrou"><a href="#GoIndex-theme-acrou" class="headerlink" title="GoIndex-theme-acrou"></a>GoIndex-theme-acrou</h1><p>结合 <a target="_blank" rel="noopener" href="https://workers.cloudflare.com/">Cloudflare Workers</a> 和 <a target="_blank" rel="noopener" href="https://www.google.com/drive/">Google Drive</a> 的力量，你可以在Cloudflare Workers的浏览器上建立你的文件索引。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/go2index">go2index&#x2F;index.js</a> 是Workers脚本的内容。</p>
+<p>这个主题的goindex目前是基于 <a target="_blank" rel="noopener" href="https://github.com/yanzai/goindex/">yanzai&#x2F;goindex</a></p>
+<p><a href="README.md">README</a> | <a href="README_zh.md">中文文档</a></p>
+<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><p>Acrou: <a target="_blank" rel="noopener" href="https://oss.achirou.workers.dev/">https://oss.achirou.workers.dev/</a> </p>
+<h2 id="特色"><a href="#特色" class="headerlink" title="特色"></a>特色</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> 👑 页面级缓存，浏览器前进后退不刷新秒加载（mac用户使用触控板体验更佳）</li>
+<li><input checked="" disabled="" type="checkbox"> 🗂 多盘切换</li>
+<li><input checked="" disabled="" type="checkbox"> 🔐 Http Basic Auth</li>
+<li><input checked="" disabled="" type="checkbox"> 🎨 网格视图模式（文件预览）</li>
+<li><input checked="" disabled="" type="checkbox"> 🎯 分页加载</li>
+<li><input checked="" disabled="" type="checkbox"> 🌐 I18n（多国语言）</li>
+<li><input checked="" disabled="" type="checkbox"> 🛠 Markdown&#x2F;Html渲染（也许它可以成为你的博客）</li>
+<li><input checked="" disabled="" type="checkbox"> 🖥 视频在线播放（支持外挂字幕vtt）</li>
+<li><input checked="" disabled="" type="checkbox"> 🕹 支持自定义视频播放器（API）</li>
+<li><input checked="" disabled="" type="checkbox"> 🎧 音频在线播放</li>
+<li><input checked="" disabled="" type="checkbox"> 🚀 拥有更快的速度</li>
+</ul>
+<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul>
+<li><input disabled="" type="checkbox"> 更多文件格式预览</li>
+<li><input disabled="" type="checkbox"> 让Goindex不只是一个目录索引</li>
+</ul>
+<h2 id="快速部署"><a href="#快速部署" class="headerlink" title="快速部署"></a>快速部署</h2><ol>
+<li><p>打开以下任意网址（哪个快用哪个） </p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://install.achirou.workers.dev/">https://install.achirou.workers.dev</a></li>
+<li><a target="_blank" rel="noopener" href="https://goindex-quick-install.glitch.me/">https://goindex-quick-install.glitch.me</a></li>
+<li><a target="_blank" rel="noopener" href="https://goindex-install.herokuapp.com/">https://goindex-install.herokuapp.com</a></li>
+</ul>
+</li>
+<li><p>授权并获取授权码</p>
+</li>
+<li><p>将代码部署到 <a target="_blank" rel="noopener" href="https://www.cloudflare.com/">Cloudflare Workers</a></p>
+</li>
+</ol>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><ol>
+<li>开启<a target="_blank" rel="noopener" href="https://console.developers.google.com/apis/api/drive.googleapis.com/overview">Google Drive API</a></li>
+<li>创建一个 <a target="_blank" rel="noopener" href="https://console.developers.google.com/apis/credentials/oauthclient">OAuth client ID</a></li>
+<li>本地安装<a target="_blank" rel="noopener" href="https://rclone.org/downloads/">rclone</a></li>
+<li>使用<code>rclone</code>获取<code>refresh_token</code></li>
+<li>下载<code>index.js</code> (<a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/tree/master/go2index">https://github.com/Aicirou/goindex-theme-acrou/tree/master/go2index</a>) 然后替换<code>client_id</code>,<code>client_secret</code>,<code>refresh_token</code> 为你刚刚获取到的</li>
+<li>把代码部署到<a target="_blank" rel="noopener" href="https://www.cloudflare.com/">Cloudflare Workers</a></li>
+</ol>
+<blockquote>
+<p>如果你写了一篇不错的文章，想分享给大家，请提交Issues，我会把链接贴在这里。</p>
+</blockquote>
+<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><h3 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h3><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>api</code></td>
+<td>String</td>
+<td><code>&#39;&#39;</code></td>
+<td>外部视频播放器api。当这个值不为空时，以下所有选项都不起作用。</td>
+</tr>
+<tr>
+<td><code>autoplay</code></td>
+<td>Boolean</td>
+<td><code>true</code></td>
+<td>当设置为<code>true</code>时，视频会自动播放，不过这取决于浏览器是否支持。</td>
+</tr>
+<tr>
+<td><code>controls</code></td>
+<td>Array, Function or Element</td>
+<td><code>[&#39;play-large&#39;, &#39;restart&#39;, &#39;play&#39;, &#39;progress&#39;, &#39;current-time&#39;, &#39;duration&#39;, &#39;mute&#39;, &#39;volume&#39;, &#39;captions&#39;, &#39;settings&#39;, &#39;pip&#39;, &#39;airplay&#39;, &#39;download&#39;, &#39;fullscreen&#39;]</code></td>
+<td>控制栏中显示哪些按钮。详细查看<a target="_blank" rel="noopener" href="https://github.com/sampotts/plyr/blob/master/CONTROLS.md#using-default-controls">CONTROLS.md</a></td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td>Array</td>
+<td><code>[&#39;quality&#39;, &#39;speed&#39;, &#39;loop&#39;]</code></td>
+<td>菜单中显示哪些设置</td>
+</tr>
+</tbody></table>
+<p>更多选项查看 plyr <a target="_blank" rel="noopener" href="https://github.com/sampotts/plyr#options">options</a></p>
+<h3 id="Audio"><a href="#Audio" class="headerlink" title="Audio"></a>Audio</h3><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>container</code></td>
+<td>String</td>
+<td><code>.aplayer</code></td>
+<td>不支持修改</td>
+</tr>
+<tr>
+<td><code>fixed</code></td>
+<td>Boolean</td>
+<td><code>true</code></td>
+<td>不支持修改</td>
+</tr>
+<tr>
+<td><code>autoplay</code></td>
+<td>Boolean</td>
+<td><code>false</code></td>
+<td>当设置为<code>true</code>时，音频会自动播放，不过这取决于浏览器是否支持。</td>
+</tr>
+<tr>
+<td><code>loop</code></td>
+<td>String</td>
+<td><code>&#39;all&#39;</code></td>
+<td>音频循环播放, 可选值: ‘all’, ‘one’, ‘none’</td>
+</tr>
+<tr>
+<td><code>order</code></td>
+<td>String</td>
+<td><code>&#39;list&#39;</code></td>
+<td>音频循环顺序, 可选值: ‘list’, ‘random’</td>
+</tr>
+<tr>
+<td><code>preload</code></td>
+<td>String</td>
+<td><code>&#39;auto&#39;</code></td>
+<td>预加载，可选值: ‘none’, ‘metadata’, ‘auto’</td>
+</tr>
+<tr>
+<td><code>volume</code></td>
+<td>Number</td>
+<td><code>0.7</code></td>
+<td>默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效</td>
+</tr>
+<tr>
+<td><code>audios</code></td>
+<td>Array</td>
+<td><code>[]</code></td>
+<td>预设播放列表。详情查看 <a href="#FAQ">FAQ</a></td>
+</tr>
+</tbody></table>
+<p>更多选项查看 APlayer <a target="_blank" rel="noopener" href="https://aplayer.js.org/#/home?id=options">options</a></p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><blockquote>
+<p>怎么修改列表的排序方式？</p>
+</blockquote>
+<p>修改第636行或者在代码中搜索<code>params.orderBy</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">－ params.<span class="property">orderBy</span> = <span class="string">&quot;folder,name,modifiedTime desc&quot;</span>;</span><br><span class="line">＋ params.<span class="property">orderBy</span> = <span class="string">&quot;modifiedTime desc&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>怎么预设音频播放列表？</p>
+</blockquote>
+<p>音频选项中添加 <code>audios</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">audio: &#123;</span><br><span class="line">  audios: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: &quot;Mojito&quot;,</span><br><span class="line">      artist: &quot;周杰伦&quot;,</span><br><span class="line">      url: &quot;https://xx.mp3&quot;,</span><br><span class="line">      lrc: &quot;https://xx.lrc&quot;,</span><br><span class="line">      cover: &quot;https://xx.jpg&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><h3 id="v2-0-8"><a href="#v2-0-8" class="headerlink" title="v2.0.8"></a>v2.0.8</h3><ul>
+<li>修复图片文件操作列不可用问题 <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/100">#100</a></li>
+<li>修复错误判断图片问题 <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/88">#88</a></li>
+<li>修复无法设置10个以上的drive <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/59">#59</a> <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/85">#85</a></li>
+<li>修复搜索结果中的某些操作无法使用</li>
+<li>修复修改内容后缓存不刷新</li>
+<li>添加默认视频播放器 (<a target="_blank" rel="noopener" href="https://github.com/sampotts/plyr">plyr</a>) <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/22">#22</a> <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/38">#38</a></li>
+<li>添加音频播放器 (<a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer">APlayer</a>) <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/77">#77</a></li>
+<li>视频页面添加复制按钮</li>
+<li>添加 <a target="_blank" rel="noopener" href="https://github.com/rstacruz/nprogress">NProgress</a></li>
+<li>添加语言缓存清理</li>
+<li>添加快捷方式无法下载提示 <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/76">#76</a></li>
+<li>Markdown默认显示渲染的html</li>
+<li>CLI删除懒加载模块的预加载</li>
+<li>删除fontawesome5</li>
+</ul>
+<h3 id="v2-0-5"><a href="#v2-0-5" class="headerlink" title="v2.0.5"></a>v2.0.5</h3><ul>
+<li>添加清理文件缓存</li>
+<li>支持自定义视频播放器（API）</li>
+<li>美化：网格模式文件无预览图时显示图标</li>
+<li>美化：调整HEAD.md渲染位置</li>
+<li>解决搜索不能预览的文件点击无法直接下载 <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/30">#30</a></li>
+<li>解决文件名中有#无法打开的问题 <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/20">#20</a></li>
+<li>解决当前页面加载中切换页面会回退的问题 <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/37">#37</a> (感谢<a target="_blank" rel="noopener" href="https://github.com/PedroZhang">@PedroZhang</a>帮忙找出的问题原因)</li>
+</ul>
+<h3 id="v2-0-0"><a href="#v2-0-0" class="headerlink" title="v2.0.0"></a>v2.0.0</h3><ul>
+<li><p>程序改为单页应用</p>
+</li>
+<li><p>添加页面级缓存（浏览器前进后退不刷新秒加载，mac用户使用触控板体验更佳）</p>
+</li>
+<li><p>添加 http basic auth（每个盘符可单独配置用户名和密码，可以保护该盘下所有子文件和子文件夹）</p>
+</li>
+<li><p>添加网格视图模式（文件预览）</p>
+</li>
+<li><p>添加分页加载</p>
+</li>
+<li><p>添加 i18n多国语言</p>
+</li>
+<li><p>添加 html渲染</p>
+</li>
+<li><p>添加 渲染文件夹&#x2F;文件的描述 （用途自行挖掘）</p>
+</li>
+<li><p>添加可选配置</p>
+</li>
+<li><p>支持快速部署（帮助小白的利器）</p>
+</li>
+<li><p>支持PDF在线预览</p>
+</li>
+<li><p>更换文本编辑器</p>
+</li>
+<li><p>解决url编码问题 <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/20">#20</a> <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/23">#23</a> <a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou/issues/25">#25</a></p>
+</li>
+<li><p>解决其他已知问题</p>
+</li>
+</ul>
+<h3 id="v1-x"><a href="#v1-x" class="headerlink" title="v1.x"></a>v1.x</h3><ul>
+<li>支持多盘切换</li>
+<li>添加版本检测</li>
+<li>优化搜索结果</li>
+<li>优化页面显示</li>
+</ul>
+<h2 id="Lisense"><a href="#Lisense" class="headerlink" title="Lisense"></a>Lisense</h2><p><a href="LICENSE">MIT</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.yunbaitech.top">Laurence</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.yunbaitech.top/2021/05/12/868172b54adf/">https://blog.yunbaitech.top/2021/05/12/868172b54adf/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.yunbaitech.top" target="_blank">云白科技</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2022/07/26/vSKYXd.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/05/13/b1bcfaf17b02/"><img class="prev-cover" src="https://s1.ax1x.com/2022/07/26/vSKJ6H.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">freevps02-第二弹-使用免费容器heroku搭建v2ray/xray/trojan/ss多合一科学上网</div></div></a></div><div class="next-post pull-right"><a href="/2021/05/12/d704c6cf0c6a/"><img class="next-cover" src="https://s1.ax1x.com/2022/07/26/vSKU0I.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">一键脚本安装xray/v2ray/trojan(八合一)+wordpress</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.helloimg.com/images/2022/07/20/ZvvNEX.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Laurence</div><div class="author-info__description">欢迎来到我的博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jth445600"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jth445600" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:jth445600@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到云白科技</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GoIndex-theme-acrou"><span class="toc-number">1.</span> <span class="toc-text">GoIndex-theme-acrou</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E8%A7%88"><span class="toc-number">1.1.</span> <span class="toc-text">预览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E8%89%B2"><span class="toc-number">1.2.</span> <span class="toc-text">特色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TODO"><span class="toc-number">1.3.</span> <span class="toc-text">TODO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2"><span class="toc-number">1.4.</span> <span class="toc-text">快速部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-number">1.5.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E9%A1%B9"><span class="toc-number">1.6.</span> <span class="toc-text">选项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Video"><span class="toc-number">1.6.1.</span> <span class="toc-text">Video</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Audio"><span class="toc-number">1.6.2.</span> <span class="toc-text">Audio</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.7.</span> <span class="toc-text">常见问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"><span class="toc-number">1.8.</span> <span class="toc-text">更新日志</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v2-0-8"><span class="toc-number">1.8.1.</span> <span class="toc-text">v2.0.8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v2-0-5"><span class="toc-number">1.8.2.</span> <span class="toc-text">v2.0.5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v2-0-0"><span class="toc-number">1.8.3.</span> <span class="toc-text">v2.0.0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v1-x"><span class="toc-number">1.8.4.</span> <span class="toc-text">v1.x</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lisense"><span class="toc-number">1.9.</span> <span class="toc-text">Lisense</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/01/28/954f9f1a6b60/" title="VMware Workstation Pro 17正式版，附注册码 - 转载如有乐享"><img src="https://s2.loli.net/2023/01/28/OVAnB3hc8e7I2mT.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VMware Workstation Pro 17正式版，附注册码 - 转载如有乐享"/></a><div class="content"><a class="title" href="/2023/01/28/954f9f1a6b60/" title="VMware Workstation Pro 17正式版，附注册码 - 转载如有乐享">VMware Workstation Pro 17正式版，附注册码 - 转载如有乐享</a><time datetime="2023-01-28T00:00:00.000Z" title="发表于 2023-01-28 00:00:00">2023-01-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/27/42571ca3c5c0/" title="chatGPT使用初体验"><img src="https://www.helloimg.com/images/2023/01/27/oRDFpC.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chatGPT使用初体验"/></a><div class="content"><a class="title" href="/2023/01/27/42571ca3c5c0/" title="chatGPT使用初体验">chatGPT使用初体验</a><time datetime="2023-01-27T00:00:00.000Z" title="发表于 2023-01-27 00:00:00">2023-01-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/25/e95b71d7567e/" title="使用下载姬(downkyi)下载b站视频"><img src="https://camo.githubusercontent.com/07e52124f1e18db4f361fdd8a6dead9a20924b4f73bb1f40da52931d2e8958f2/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30362f30342f644f73717466425863655267726a322e706e67" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用下载姬(downkyi)下载b站视频"/></a><div class="content"><a class="title" href="/2023/01/25/e95b71d7567e/" title="使用下载姬(downkyi)下载b站视频">使用下载姬(downkyi)下载b站视频</a><time datetime="2023-01-25T00:00:00.000Z" title="发表于 2023-01-25 00:00:00">2023-01-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/24/2622719c74ec/" title="制作win11 windows to go"><img src="https://www.helloimg.com/images/2023/01/24/oR9Pu0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="制作win11 windows to go"/></a><div class="content"><a class="title" href="/2023/01/24/2622719c74ec/" title="制作win11 windows to go">制作win11 windows to go</a><time datetime="2023-01-24T00:00:00.000Z" title="发表于 2023-01-24 00:00:00">2023-01-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/24/638a8b91d668/" title="各类平台测评"><img src="https://s1.ax1x.com/2022/07/26/vSKa7t.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="各类平台测评"/></a><div class="content"><a class="title" href="/2023/01/24/638a8b91d668/" title="各类平台测评">各类平台测评</a><time datetime="2023-01-24T00:00:00.000Z" title="发表于 2023-01-24 00:00:00">2023-01-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Laurence</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-api-flax-six.vercel.app',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-api-flax-six.vercel.app',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
