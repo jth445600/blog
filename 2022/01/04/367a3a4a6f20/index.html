@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>搭建自己的邮箱服务器 | 云白科技</title><meta name="author" content="Laurence"><meta name="copyright" content="Laurence"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="搭建自己的邮箱服务器 一、前言很早之前，就想整个自己的邮件服务器玩玩，一直觉得有个自己的邮件服务器是很棒的事情，有了域名，有了服务器，有了闲，赶紧整个邮件服务器来玩玩~ 二、选择合适的邮件系统选择合适的邮件系统能够让我们的部署和使用事半功倍，在网上查找了一番，可供我们选择的有Ewomail和iRedMail，前者有开源和企业版，企业版的功能较多，后者完全开源。Ewomail和iRedMail功能都">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建自己的邮箱服务器">
+<meta property="og:url" content="https://blog.yunbaitech.top/2022/01/04/367a3a4a6f20/index.html">
+<meta property="og:site_name" content="云白科技">
+<meta property="og:description" content="搭建自己的邮箱服务器 一、前言很早之前，就想整个自己的邮件服务器玩玩，一直觉得有个自己的邮件服务器是很棒的事情，有了域名，有了服务器，有了闲，赶紧整个邮件服务器来玩玩~ 二、选择合适的邮件系统选择合适的邮件系统能够让我们的部署和使用事半功倍，在网上查找了一番，可供我们选择的有Ewomail和iRedMail，前者有开源和企业版，企业版的功能较多，后者完全开源。Ewomail和iRedMail功能都">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/07/26/vSKG1e.jpg">
+<meta property="article:published_time" content="2022-01-04T12:32:46.000Z">
+<meta property="article:modified_time" content="2023-08-11T01:20:51.155Z">
+<meta property="article:author" content="Laurence">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/07/26/vSKG1e.jpg"><link rel="shortcut icon" href="https://www.helloimg.com/images/2022/07/20/ZvvNEX.jpg"><link rel="canonical" href="https://blog.yunbaitech.top/2022/01/04/367a3a4a6f20/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-3841753214614437',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '搭建自己的邮箱服务器',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-11 01:20:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.helloimg.com/images/2022/07/20/ZvvNEX.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s1.ax1x.com/2022/07/26/vSKG1e.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">云白科技</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">搭建自己的邮箱服务器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-04T12:32:46.000Z" title="发表于 2022-01-04 12:32:46">2022-01-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-11T01:20:51.155Z" title="更新于 2023-08-11 01:20:51">2023-08-11</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="搭建自己的邮箱服务器"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><p><p><h1>搭建自己的邮箱服务器</h1> <p><span style="font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:15px;line-height:1.75;font-weight:400"></span><h1>一、前言</h1><p>很早之前，就想整个自己的邮件服务器玩玩，一直觉得有个自己的邮件服务器是很棒的事情，有了域名，有了服务器，有了闲，赶紧整个邮件服务器来玩玩~</p>
+<h1>二、选择合适的邮件系统</h1><p>选择合适的邮件系统能够让我们的部署和使用事半功倍，在网上查找了一番，可供我们选择的有Ewomail和iRedMail，前者有开源和企业版，企业版的功能较多，后者完全开源。Ewomail和iRedMail功能都很强大，管理系统和邮件系统直观，部署都可以通过编写好的脚本来部署，都有详细的说明文档（其中iRedMail的doc没有完全翻译完成）。我选择了iRedMail。</p><p>下面给出二者的doc链接，可以去了解一下</p><p><a target="_blank" rel="noopener" href="https://www.byteblogs.com/article/1351undefined">Ewomail</a></p><p><a target="_blank" rel="noopener" href="https://www.byteblogs.com/article/1351undefined">iRedMail</a></p>
+<h1>三、选择合适的部署方式</h1><p>有两种部署方式，脚本安装和Docker一键部署，Docker大法好，所以我们使用Docker部署~</p><p>选择脚本安装的同学看官方教程/百度一下就能找到方法，这里不多叙述。</p><p>Docker有官方的，也有第三方的，官方的还在测试，建议不用于生产环境</p><p>我们选择lejmr/iredmail</p><pre><code>docker run -p 80:80 -p 443:443
+           -h HOSTNAME.DOMAIN
+           -e "MYSQL_ROOT_PASSWORD=password"
+           -e "SOGO_WORKERS=1"
+           -e "TZ=Europe/Prague"
+           -e "POSTMASTER_PASSWORD=&#123;PLAIN&#125;password"
+           -e "IREDAPD_PLUGINS=['reject_null_sender', 'reject_sender_login_mismatch', 'greylisting', 'throttle', 'amavisd_wblist', 'sql_alias_access_policy']"
+           -v /srv/iredmail/mysql:/var/lib/mysql
+           -v /srv/iredmail/vmail:/var/vmail
+           -v /srv/iredmail/clamav:/var/lib/clamav
+           --name=iredmail lejmr/iredmail:mysql-latest
+</code></pre><p>注意事项：</p><p>①-h HOSTNAME.DOMAIN 要带上mail（e.g.   mail.luckykeeper.site）</p><p>②-e "MYSQL_ROOT_PASSWORD=password" password可以自定义</p><p>③-e "SOGO_WORKERS=1" 是否启用SOGO，不启用改0</p><p><img src="https://s2.loli.net/2022/01/04/esQpK6q4jdwuHFR.png" />
+SOGo的样子</p><p>④-e "TZ=Europe/Prague" 大种花请改 Asia/Shanghai</p><p>⑤-e "POSTMASTER_PASSWORD={PLAIN}password"    {PLAIN}password整体改成自己的密码（管理员<a target="_blank" rel="noopener" href="https://www.byteblogs.com/article/1351undefined">postmaster@hostname.domain</a>的密码）</p><p>⑥-e "IREDAPD_PLUGINS=['reject_null_sender', 'reject_sender_login_mismatch', 'greylisting', 'throttle', 'amavisd_wblist', 'sql_alias_access_policy']"启用的插件</p><p>⑦注意看tag，有不同版本，本文发布时最新版本是lejmr/iredmail:mysql-1.3-latest，pull的时候要注意不能直接pull</p><p>部署完成后，访问https://[IP]即可访问</p><p>1、https://[IP]/mail              Roundcube Webmail（发邮件的）</p><p>2、https://[IP]/SOGo           Android风Webmail（也是发邮件的）</p><p>3、https://[IP]/iredadmin  邮箱管理后台</p><p>常规操作（添加用户等）so easy~     略过不表</p>
+<h1>四、部署后的DNS、TLS操作</h1><p>要想让刚刚部署完的邮件服务器正常收发邮件，这一步必不可少</p><p>1、添加各种记录，如表：
+<img src="https://s2.loli.net/2022/01/04/WnYQ9tjDMl5VhiZ.png" />
+详解</p><p>①| TXT | @ | 默认 | v=spf1 mx -all |</p><p>SPF记录，添加之后可以起到防垃圾邮件和防止自己发的邮件被识别为垃圾邮件</p><p>mx只允许下面要设置的mx值的主机（服务器）发邮件</p><p>ip4:/ip6:只允许这个地址的主机（服务器）发邮件</p><p><a target="_blank" rel="noopener" href="https://www.byteblogs.com/article/1351undefined">SPF详解</a></p><p>②| TXT | dkim._domainkey | 默认 | 这是存放DKIM的值 |</p><p>dkim值，通过公/私钥验证防垃圾邮件和防止自己发的邮件被识别为垃圾邮件</p><p>获取dkim key的方法</p><p>centos6</p><pre><code>[root@mail ~]# amavisd showkeys</code></pre><p>centos7/8</p><pre><code>[root@mail ~]# amavisd -c /etc/amavisd/amavisd.conf showkeys</code></pre><p>复制输出的信息，打开<a target="_blank" rel="noopener" href="https://www.byteblogs.com/article/1351undefined">http://www.ewomail.com/list-20.html</a> 整理dkim信息</p><p>整理完成后会在"整理显示区域"显示解析记录，接下来设置域名解析即可完成。</p><p>等待10分钟后测试是否设置正确。</p><p>测试命令：</p><p>centos6</p><pre><code>[root@mail ~]# amavisd testkeys</code></pre><p>centos7/8</p><pre><code>[root@mail ~]# amavisd  -c /etc/amavisd/amavisd.conf testkeys</code></pre><p>测试报pass，就OK啦~</p><p>③</p><p>| A | mail | 默认 | 127.0.0.1 |</p><p>设置A/AAAA记录，做ipv4/v6解析</p><p>④</p><p>| CNAME | smtp | 默认 | mail.xxx.xxx |
+| CNAME | pop | 默认 | mail.xxx.xxx |
+| CNAME | imap | 默认 | mail.xxx.xxx |</p><p>smtp pop imap的地址</p><p>⑤</p><p>| MX | @ | 默认 | mail.xxx.xxx |</p><p>MX的记录值，邮箱的地址</p>
+<span></span><span style="clear:both"></span>
+<p>验证SPF和dkim设置</p><p>SPF：<a target="_blank" rel="noopener" href="https://www.byteblogs.com/article/1351undefined">https://www.kitterman.com/spf/validate.html</a></p><p>dkim：<a target="_blank" rel="noopener" href="https://www.byteblogs.com/article/1351undefined">https://dkimvalidator.com/</a></p><p>去这里给指定邮箱发个邮件就能知道</p>
+<h2>2、配置SSL证书</h2><p>证书存放位置</p><pre><code>    - /etc/pki/tls/certs/iRedMail.crt
+    - /etc/pki/tls/private/iRedMail.key</code></pre><p>因为我安装了宝塔，所以直接把宝塔申请的证书改后缀放到指定目录替换即可</p>
+<h1>五、修改附件大小限制</h1><h2>1、修改 postfix 中邮件大小的设置</h2><p>Postfix 是一个邮件传送代理（MTA），因此，要修改配置以使它能传送大附件的邮件。</p><p>假设要修改附件大小为 100MB，需对 message_size_limit 和 mailbox_size_limit 做如下修改：</p><pre><code># postconf -e message_size_limit='104857600'
+# postconf -e mailbox_size_limit='104857600'
+</code></pre><p>之后重启 Postfix 服务，使上述修改生效:</p><pre><code># /etc/init.d/postfix restart
+</code></pre><p><strong style="margin:0px;font-weight:600">注意</strong>:</p><ul><li>104857600 是由 100 (MB) x 1024 (KB) x 1024 (Bit) 计算得到的结果。</li><li>邮件在发送前会被客户端（Outlook，Thunderbird等）重新编码，导致邮件大小会超过 100MB，所以建议将上述设置中的邮件大小改为 110MB 或 120MB 即可。</li><li>如果 mailbox_size_limit 的值比 message_size_limit 小，你会在 Postfix 日志 文件里看到这样的错误信息：fatal: main.cf configuration error: mailbox_size_limit is smaller than message_size_limit.</li></ul><p>这样你就可以通过客户端正常发送邮件了。</p>
+<h2>2、修改 Roundcube 网页邮箱的附件上传大小</h2><p>如果使用 Roundcube 网页邮箱，需要额外更改两个地方：</p>
+<h3>2.1修改 PHP 设置允许上传大附件</h3><p>修改 PHP 配置文件 /etc/php.ini 中的 memory_limit， upload_max_filesize 和 post_max_size 三个参数：</p><ul><li>在 RHEL/CentOS 系统上: 配置文件路径是 /etc/php.ini</li><li>在 Debian/Ubuntu 系统上，配置文件路径是 /etc/php5/apache2/php.ini</li><li>在 FreeBSD 系统上，配置文件路径是 /usr/local/etc/php.ini （Apache），或者是 /etc/php5/fpm/php.ini （Nginx）。</li><li>在 OpenBSD 系统上，配置文件路径是 /etc/php-5.4.ini。如果你运行的 PHP 版本号为 5.4 ，路径将会不一样。</li></ul><pre><code>memory_limit = 200M; (在Resource Limit部分)
+upload_max_filesize = 100M;（在File Upload部分）
+post_max_size = 100M;（在Data...上面）
+</code></pre><h3>2.2修改 Roundcube 网页邮箱设置以允许上传大附件</h3><p>修改 roundcube 目录下的 .htaccess 文件:</p><ul><li>在 RHEL/CentOS 系统上，此文件路径为 /var/www/roundcubemail/.htaccess</li></ul><p>或者/opt/www/roundcubemail-1.x.x/.htaccess</p><ul><li>在 Debian/Ubuntu 系统上，此文件路径为 /usr/share/apache2/roundcubemail/.htaccess 或者 /opt/www/roundcubemail/.htaccess.</li><li>在 FreeBSD 系统上，此文件路径为 /usr/local/www/roundcubemail/.htaccess</li><li>在 OpenBSD 系统上，此文件路径为 /var/www/roundcubemail/.htaccess</li></ul><p>注意:某些 Linux/BSD 发行版本可能没有 .htaccess 文件，此时你可以忽略此步骤。</p><pre><code>php_value    memory_limit   200M
+php_value    upload_max_filesize    100M
+php_value    post_max_size  100M
+</code></pre><p>重启 Apache 或 php-fpm 服务以使上述修改生效。</p>
+<h2>3、限制 Nginx 上传文件大小</h2><p>在配置文件 /etc/nginx/nginx.conf 中找到参数 client_max_body_size ，按需要修改大小：</p><p>如果nginx.conf中http{}指定了include ，就不能像下面这样直接改，要到include的文件夹找client_max_body_size去改</p><pre><code>http &#123;
+    ...
+    client_max_body_size 100m;
+    ...
+&#125;
+</code></pre><h2>4、限制 SOGo 上传文件大小（不设置就不限制）</h2><p>SOGo-3.x 引入新参数 WOMaxUploadSize 用于限制上传文件的大小，请将它添加到 SOGo 配置文件 /etc/sogo/sogo.conf 里并设置一个合适的附件大小。</p><pre><code>// set the maximum allowed size for content being sent to SOGo using a PUT or
+// a POST call. This can also limit the file attachment size being uploaded
+// to SOGo when composing a mail.
+//
+//  - The value is in kilobyte.
+//  - By default, the value is 0, or disabled so no limit will be set.
+WOMaxUploadSize = 102400;
+</code></pre><p>修改后需要重启 SOGo 服务。</p>
+<h2>5、修改 Outlook 程序的附件大小限制（使用Outlook做客户端需要）</h2><p>Outlook 有自己的附件大小限制，如果超出限制会弹出错误信息 The attachment size exceeds the allowable limit.</p><p>如需要在 Windows 系统上修改 Outlook 程序的附件大小限制，请参照以下步骤：</p><ul><li>退出 Outlook 程序</li><li>运行注册表编辑器：开始 -&gt; 运行 -&gt; 输入 "regedit"</li><li>找到并选择以下任意一个条目：<ul><li>如果不存在可自行创建。</li><li>14.04 表示 Outlook 的版本号，在你的系统上可能不一样。</li></ul></li></ul><pre><code>HKEY_CURRENT_USERSoftwareMicrosoftOffice14.0OutlookPreferences
+HKEY_CURRENT_USERSoftwarePoliciesMicrosoftOffice14.0OutlookPreferences
+</code></pre><ul><li><p>在以上条目底下添加注册表项：</p><ul><li>类型：DWORD</li><li>名称：MaximumAttachmentSize</li><li>值：一个用于表示最大附件大小的整数。例如，30720 表示 30MB 限制。</li></ul><p>注意：</p><ul><li>设置为 0 表示无限制。</li><li>默认限制为 20MB。可设置小于 20MB 的附件大小。</li></ul></li><li><p>退出注册表编辑器。</p></li><li><p>启动 Outlook。</p></li></ul><p>注意：大多数邮箱有跨邮箱附件大小限制，超过10M的邮件往往会被退件，建议用同域邮箱或者其它方式传送附件。</p><p>需要开放的端口</p><p>25,143,993,995,587,110,465,443</p><p>都设置好了？All Done！享用自己的专属邮箱吧~</p>
+<span style="font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:15px;line-height:1.75;font-weight:400;clear:both"></span></p><p>版权声明：本文为3290118815@qq.com原创文章，允许转载，转载时请务必标明文章原始出处 。 </p><p>原文地址：https://www.byteblogs.com/article/1351</p></p></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.yunbaitech.top">Laurence</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.yunbaitech.top/2022/01/04/367a3a4a6f20/">https://blog.yunbaitech.top/2022/01/04/367a3a4a6f20/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.yunbaitech.top" target="_blank">云白科技</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2022/07/26/vSKG1e.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/24/0e5f458ccba0/"><img class="prev-cover" src="https://www.helloimg.com/images/2023/01/24/oROTUq.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">用“傲梅口袋系统”制作WTG启动盘</div></div></a></div><div class="next-post pull-right"><a href="/2021/11/26/f3ffe23e30be/"><img class="next-cover" src="https://s1.ax1x.com/2022/07/26/vSK8pD.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">最安全的浏览器 Tor</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.helloimg.com/images/2022/07/20/ZvvNEX.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Laurence</div><div class="author-info__description">欢迎来到我的博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jth445600"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jth445600" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:jth445600@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到云白科技</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">搭建自己的邮箱服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">二、选择合适的邮件系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">三、选择合适的部署方式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">四、部署后的DNS、TLS操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.1.</span> <span class="toc-text">2、配置SSL证书</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">五、修改附件大小限制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.1.</span> <span class="toc-text">1、修改 postfix 中邮件大小的设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.2.</span> <span class="toc-text">2、修改 Roundcube 网页邮箱的附件上传大小</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">6.2.1.</span> <span class="toc-text">2.1修改 PHP 设置允许上传大附件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">6.2.2.</span> <span class="toc-text">2.2修改 Roundcube 网页邮箱设置以允许上传大附件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.3.</span> <span class="toc-text">3、限制 Nginx 上传文件大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.4.</span> <span class="toc-text">4、限制 SOGo 上传文件大小（不设置就不限制）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.5.</span> <span class="toc-text">5、修改 Outlook 程序的附件大小限制（使用Outlook做客户端需要）</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/17/89ee3f2d93d0/" title="让Linux设备自动上报IP地址到邮箱/Let Linux devices to report its IP address via Email"><img src="https://s1.ax1x.com/2023/05/17/p9WuoIH.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="让Linux设备自动上报IP地址到邮箱/Let Linux devices to report its IP address via Email"/></a><div class="content"><a class="title" href="/2023/05/17/89ee3f2d93d0/" title="让Linux设备自动上报IP地址到邮箱/Let Linux devices to report its IP address via Email">让Linux设备自动上报IP地址到邮箱/Let Linux devices to report its IP address via Email</a><time datetime="2023-05-17T00:00:00.000Z" title="发表于 2023-05-17 00:00:00">2023-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/17/98e26e804278/" title="9.9包邮的随身WIFI刷Debian系统, 变成插上USB口就能用的随身科学上网linux设备"><img src="https://s1.ax1x.com/2023/05/17/p9RjGlt.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="9.9包邮的随身WIFI刷Debian系统, 变成插上USB口就能用的随身科学上网linux设备"/></a><div class="content"><a class="title" href="/2023/05/17/98e26e804278/" title="9.9包邮的随身WIFI刷Debian系统, 变成插上USB口就能用的随身科学上网linux设备">9.9包邮的随身WIFI刷Debian系统, 变成插上USB口就能用的随身科学上网linux设备</a><time datetime="2023-05-17T00:00:00.000Z" title="发表于 2023-05-17 00:00:00">2023-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/15/5592d7faa882/" title="linux配置mutt命令行邮件客户端"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Mutt.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux配置mutt命令行邮件客户端"/></a><div class="content"><a class="title" href="/2023/05/15/5592d7faa882/" title="linux配置mutt命令行邮件客户端">linux配置mutt命令行邮件客户端</a><time datetime="2023-05-15T00:00:00.000Z" title="发表于 2023-05-15 00:00:00">2023-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/15/68b1943d001d/" title="一个shell脚本,实现cpu温度监控,并且超过设定温度后实现邮件报警"><img src="https://s1.ax1x.com/2023/05/15/p92K3SP.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一个shell脚本,实现cpu温度监控,并且超过设定温度后实现邮件报警"/></a><div class="content"><a class="title" href="/2023/05/15/68b1943d001d/" title="一个shell脚本,实现cpu温度监控,并且超过设定温度后实现邮件报警">一个shell脚本,实现cpu温度监控,并且超过设定温度后实现邮件报警</a><time datetime="2023-05-15T00:00:00.000Z" title="发表于 2023-05-15 00:00:00">2023-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/29/334a541e43c1/" title="在ubuntu系统中安装docker和docker-compose"><img src="https://s1.ax1x.com/2023/03/29/ppcGDsA.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在ubuntu系统中安装docker和docker-compose"/></a><div class="content"><a class="title" href="/2023/03/29/334a541e43c1/" title="在ubuntu系统中安装docker和docker-compose">在ubuntu系统中安装docker和docker-compose</a><time datetime="2023-03-29T00:00:00.000Z" title="发表于 2023-03-29 00:00:00">2023-03-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Laurence</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: '',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: '',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

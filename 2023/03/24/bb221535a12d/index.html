@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>使用油猴脚本破解百度网盘下载限速 | 云白科技</title><meta name="keywords" content="baidudisk"><meta name="author" content="Laurence"><meta name="copyright" content="Laurence"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="思维导图地址: https:&#x2F;&#x2F;gitmind.com&#x2F;app&#x2F;docs&#x2F;mqy0dckm 一直以来，百度网盘非会员账号下载限速是很多用户十分无语的一件事情，这几年来也出现了很多能人异士开发了一些工具来解决这个问题，比如我之前用过的baidupcs baidupcd-go都曾经在一段时间内有效。现在tg圈有一个大佬搞了一个kubedown油猴脚本，可以破解百度网盘设置的下载限速，经过本人测试，可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用油猴脚本破解百度网盘下载限速">
+<meta property="og:url" content="https://blog.yunbaitech.top/2023/03/24/bb221535a12d/index.html">
+<meta property="og:site_name" content="云白科技">
+<meta property="og:description" content="思维导图地址: https:&#x2F;&#x2F;gitmind.com&#x2F;app&#x2F;docs&#x2F;mqy0dckm 一直以来，百度网盘非会员账号下载限速是很多用户十分无语的一件事情，这几年来也出现了很多能人异士开发了一些工具来解决这个问题，比如我之前用过的baidupcs baidupcd-go都曾经在一段时间内有效。现在tg圈有一个大佬搞了一个kubedown油猴脚本，可以破解百度网盘设置的下载限速，经过本人测试，可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321361.png">
+<meta property="article:published_time" content="2023-03-24T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-08-11T01:20:51.155Z">
+<meta property="article:author" content="Laurence">
+<meta property="article:tag" content="baidudisk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321361.png"><link rel="shortcut icon" href="https://www.helloimg.com/images/2022/07/20/ZvvNEX.jpg"><link rel="canonical" href="https://blog.yunbaitech.top/2023/03/24/bb221535a12d/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-3841753214614437',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '使用油猴脚本破解百度网盘下载限速',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-11 01:20:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://www.helloimg.com/images/2022/07/20/ZvvNEX.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/jth445600/picgo@master/小书匠/1682212321361.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">云白科技</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">使用油猴脚本破解百度网盘下载限速</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-24T00:00:00.000Z" title="发表于 2023-03-24 00:00:00">2023-03-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-11T01:20:51.155Z" title="更新于 2023-08-11 01:20:51">2023-08-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/windows/">windows</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="使用油猴脚本破解百度网盘下载限速"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h5 id="思维导图地址-https-gitmind-com-app-docs-mqy0dckm"><a href="#思维导图地址-https-gitmind-com-app-docs-mqy0dckm" class="headerlink" title="思维导图地址: https://gitmind.com/app/docs/mqy0dckm"></a>思维导图地址: <a target="_blank" rel="noopener" href="https://gitmind.com/app/docs/mqy0dckm">https://gitmind.com/app/docs/mqy0dckm</a></h5><p><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321393.png" alt="enter description here"></p>
+<p>一直以来，百度网盘非会员账号下载限速是很多用户十分无语的一件事情，这几年来也出现了很多能人异士开发了一些工具来解决这个问题，比如我之前用过的baidupcs baidupcd-go都曾经在一段时间内有效。<br>现在tg圈有一个大佬搞了一个<code>kubedown</code>油猴脚本，可以破解百度网盘设置的下载限速，经过本人测试，可以满宽带下载，体验十分不错。而且安装配置也十分简单，还可以配合motrix、Aria2和IDM多线程快速下载。<br>kubedown 的tg群组: <a target="_blank" rel="noopener" href="https://t.me/KubeDownChannel">https://t.me/KubeDownChannel</a><br>对应油管视频地址：<a target="_blank" rel="noopener" href="https://youtu.be/KhPOHL3L3pQ">https://youtu.be/KhPOHL3L3pQ</a></p>
+<h4 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h4><ol>
+<li>国内推荐使用edge浏览器</li>
+<li>有科学上网环境的话用Google chrome浏览器</li>
+</ol>
+<h4 id="一、在浏览器安装油猴脚本"><a href="#一、在浏览器安装油猴脚本" class="headerlink" title="一、在浏览器安装油猴脚本"></a>一、在浏览器安装油猴脚本</h4><p>这里以 <code>Microsoft edge</code>为例，视频中会以<code>Google chrome</code>浏览器为例<br>打开 <code>Microsoft edge</code>浏览器，然后在地址栏输入以下链接并访问，然后点击获取开始安装油猴插件。<br><a target="_blank" rel="noopener" href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd?hl=zh-CN">https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd?hl=zh-CN</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321362.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321715.png" alt="image.png"><br>安装完成之后，点击右上角的这个图标就可以看到，已经安装完成了，而且点击这个小眼睛就可以使其在主页面显示。<br><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321515.png" alt="image.png"></p>
+<h4 id="二、安装破解脚本"><a href="#二、安装破解脚本" class="headerlink" title="二、安装破解脚本"></a>二、安装破解脚本</h4><p>在浏览器打开如下链接 ： <a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/463832">https://greasyfork.org/zh-CN/scripts/463832</a><br>然后点击安装此脚本，到这里就完成破解脚本脚本安装了<br><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321411.png" alt="image.png"></p>
+<p>备用下载2: <a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/463832">https://greasyfork.org/zh-CN/scripts/463832</a></p>
+<p>备用下载3: <a target="_blank" rel="noopener" href="http://script.kubedown.com/">http://script.kubedown.com/</a></p>
+<h4 id="三、下载motrix多线程下载器"><a href="#三、下载motrix多线程下载器" class="headerlink" title="三、下载motrix多线程下载器"></a>三、下载motrix多线程下载器</h4><p>这里演示使用motrix多线程下载器。</p>
+<h5 id="推荐安装GitHub增强脚本"><a href="#推荐安装GitHub增强脚本" class="headerlink" title="推荐安装GitHub增强脚本"></a>推荐安装GitHub增强脚本</h5><blockquote>
+<p>因为是从github海外服务器，不加代理的话下载速度会很慢，推荐安装此油猴脚本实现快速下载。</p>
+</blockquote>
+<p> 脚本地址： <a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD">https://greasyfork.org/zh-CN/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD</a><br><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321413.png" alt="image.png"></p>
+<p>motrix下载地址：<a target="_blank" rel="noopener" href="https://github.com/agalwood/Motrix/releases">https://github.com/agalwood/Motrix/releases</a><br>打开下载界面后，因为我是Windows系统，我选择win版本下载，根据你自己的系统来选择，因为配置了GitHub增强脚本，所以可以看到后边有多个加速下载的节点。<br><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321334.png" alt="image.png"><br>下载完成之后，解压打开，双击motrix.exe 图标就可以打开主界面了<br><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321360.png" alt="image.png"></p>
+<h4 id="四、获取百度网盘下载链接"><a href="#四、获取百度网盘下载链接" class="headerlink" title="四、获取百度网盘下载链接"></a>四、获取百度网盘下载链接</h4><p><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321316.png" alt="image.png"><br>打开百度网盘后，选择自己要下载的文件，点击这里的<code>kubedown</code>图标，输入验证码后，就可以看到下载链接了。<br>先复制<code>下载链接</code>然后再点击确认。<br><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321412.png" alt="image.png"></p>
+<blockquote>
+<p>这里有个问题需要注意: 1.有时候会获取失败,就多试几次. 2.作者设置了只能国内IP访问,别挂代理.</p>
+</blockquote>
+<p>复制完下载链接之后, 点击加号添加下载链接.<br><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321326.png" alt="image.png"><br>点击高级设置, 在<code>user-agent</code>添加<code>netdisk</code>,然后点击下载就可以了.<br><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321361.png" alt="image.png"><br>我这里是百兆宽带,可以看到基本跑满宽带.</p>
+<h5 id="idm也是同样的操作"><a href="#idm也是同样的操作" class="headerlink" title="idm也是同样的操作"></a>idm也是同样的操作</h5><p><img src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1682212321363.png" alt="image.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.yunbaitech.top">Laurence</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.yunbaitech.top/2023/03/24/bb221535a12d/">https://blog.yunbaitech.top/2023/03/24/bb221535a12d/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.yunbaitech.top" target="_blank">云白科技</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/baidudisk/">baidudisk</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/小书匠/1682212321361.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/28/44cc952830ff/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/jth445600/picgo@master/img/2023/03/28/e3286a412bcb4ef8997d676332695e99-20230328114408-385b7d.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">白嫖cloudflare域名邮箱</div></div></a></div><div class="next-post pull-right"><a href="/2023/02/04/9b617bdb08d8/"><img class="next-cover" src="https://s1.ax1x.com/2023/02/04/pSyftje.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">给甲骨文ARM安装Gnome桌面</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://www.helloimg.com/images/2022/07/20/ZvvNEX.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Laurence</div><div class="author-info__description">欢迎来到我的博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jth445600"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jth445600" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:jth445600@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到云白科技</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E5%9C%B0%E5%9D%80-https-gitmind-com-app-docs-mqy0dckm"><span class="toc-text">思维导图地址: https:&#x2F;&#x2F;gitmind.com&#x2F;app&#x2F;docs&#x2F;mqy0dckm</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E6%9D%A1%E4%BB%B6"><span class="toc-text">准备条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%89%E8%A3%85%E6%B2%B9%E7%8C%B4%E8%84%9A%E6%9C%AC"><span class="toc-text">一、在浏览器安装油猴脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85%E7%A0%B4%E8%A7%A3%E8%84%9A%E6%9C%AC"><span class="toc-text">二、安装破解脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%B8%8B%E8%BD%BDmotrix%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD%E5%99%A8"><span class="toc-text">三、下载motrix多线程下载器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E5%AE%89%E8%A3%85GitHub%E5%A2%9E%E5%BC%BA%E8%84%9A%E6%9C%AC"><span class="toc-text">推荐安装GitHub增强脚本</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%8E%B7%E5%8F%96%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5"><span class="toc-text">四、获取百度网盘下载链接</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#idm%E4%B9%9F%E6%98%AF%E5%90%8C%E6%A0%B7%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-text">idm也是同样的操作</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/17/89ee3f2d93d0/" title="让Linux设备自动上报IP地址到邮箱/Let Linux devices to report its IP address via Email"><img src="https://s1.ax1x.com/2023/05/17/p9WuoIH.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="让Linux设备自动上报IP地址到邮箱/Let Linux devices to report its IP address via Email"/></a><div class="content"><a class="title" href="/2023/05/17/89ee3f2d93d0/" title="让Linux设备自动上报IP地址到邮箱/Let Linux devices to report its IP address via Email">让Linux设备自动上报IP地址到邮箱/Let Linux devices to report its IP address via Email</a><time datetime="2023-05-17T00:00:00.000Z" title="发表于 2023-05-17 00:00:00">2023-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/17/98e26e804278/" title="9.9包邮的随身WIFI刷Debian系统, 变成插上USB口就能用的随身科学上网linux设备"><img src="https://s1.ax1x.com/2023/05/17/p9RjGlt.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="9.9包邮的随身WIFI刷Debian系统, 变成插上USB口就能用的随身科学上网linux设备"/></a><div class="content"><a class="title" href="/2023/05/17/98e26e804278/" title="9.9包邮的随身WIFI刷Debian系统, 变成插上USB口就能用的随身科学上网linux设备">9.9包邮的随身WIFI刷Debian系统, 变成插上USB口就能用的随身科学上网linux设备</a><time datetime="2023-05-17T00:00:00.000Z" title="发表于 2023-05-17 00:00:00">2023-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/15/5592d7faa882/" title="linux配置mutt命令行邮件客户端"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Mutt.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="linux配置mutt命令行邮件客户端"/></a><div class="content"><a class="title" href="/2023/05/15/5592d7faa882/" title="linux配置mutt命令行邮件客户端">linux配置mutt命令行邮件客户端</a><time datetime="2023-05-15T00:00:00.000Z" title="发表于 2023-05-15 00:00:00">2023-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/15/68b1943d001d/" title="一个shell脚本,实现cpu温度监控,并且超过设定温度后实现邮件报警"><img src="https://s1.ax1x.com/2023/05/15/p92K3SP.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一个shell脚本,实现cpu温度监控,并且超过设定温度后实现邮件报警"/></a><div class="content"><a class="title" href="/2023/05/15/68b1943d001d/" title="一个shell脚本,实现cpu温度监控,并且超过设定温度后实现邮件报警">一个shell脚本,实现cpu温度监控,并且超过设定温度后实现邮件报警</a><time datetime="2023-05-15T00:00:00.000Z" title="发表于 2023-05-15 00:00:00">2023-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/29/334a541e43c1/" title="在ubuntu系统中安装docker和docker-compose"><img src="https://s1.ax1x.com/2023/03/29/ppcGDsA.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在ubuntu系统中安装docker和docker-compose"/></a><div class="content"><a class="title" href="/2023/03/29/334a541e43c1/" title="在ubuntu系统中安装docker和docker-compose">在ubuntu系统中安装docker和docker-compose</a><time datetime="2023-03-29T00:00:00.000Z" title="发表于 2023-03-29 00:00:00">2023-03-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Laurence</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: '',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: '',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
